@@ -20,6 +20,25 @@ public class CreateBoard : MonoBehaviour {
 		}
 	}
 
+	private long SetCellState(long bitboard , int row , int column) {
+		long newBit = 1L << (row * NUMBER_OF_ROWS + column);
+		return (bitboard | newBit);
+	}
+
+	private bool GetCellState(long bitboard , int row , int column) {
+		long newBit = 1L << (row * NUMBER_OF_ROWS + column);
+		return ((bitboard & newBit) != 0);
+	}
+
+	private int GetCellCount(long bitboard) {
+		int count = 0;
+		while(bitboard != 0) {
+			bitboard -= 1;
+			count++;
+		}
+		return count;
+	}
+
 	// Update is called once per frame
 	void Update() {
 
