@@ -18,3 +18,16 @@ We can hold bitboard for black cells and put 1s for them, then we can make anoth
     - index = row * width + column
     - number[row][column] = number[row * width + column]
     - For instance, if I want to set 1st row 5th column bit, actually I want to set 13th bit of bit sequence. So, to set that bit, make new bit array then left shift it by 13 so that I will have 1000000000000. Then |(or) this with actual bitboard. That will make 13th bit 1. If I want to retrieve the value of bit, do the same operations and instead of | make &. If result != 0, then that bit is 1.
+    - About Bitboard Gameplay:
+        - Player only can construct houses on dirt and desert tiles.
+        - Player gets 10 points for each dirt house buildings and 5 for desert.
+        - Player will get -2 penalty if tries to build house other than on dirt and desert.
+        - Player can build house with left mouse click.
+        - Player can deconstruct house with right mouse click.
+        - Game will spawn random trees on dirts and deserts.
+        - Player will not able to put houses if area occupied with tree.
+        - Goal is to earn as much as points before game spawn trees.
+
+NOTES: 
+- Quaternion.identity: This quaternion corresponds to "no rotation" - the object is perfectly aligned with the world or parent axes.
+- Random.Range: if values float, max value is inclusive otherwise exclusive. 
