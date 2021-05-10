@@ -1,12 +1,12 @@
 using System;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class CreateBoard : MonoBehaviour {
 	public GameObject[] tilePrefabs;
 	public GameObject housePrefab;
 	public GameObject treePrefab;
-	public Text score;
+	public TMP_Text text;
 
 	private GameObject[] addedTiles;
 	private const int NUMBER_OF_ROWS = 8;
@@ -91,6 +91,7 @@ public class CreateBoard : MonoBehaviour {
 					house.transform.parent = hitTransform;
 					house.transform.localPosition = Vector3.zero;
 					playerBitboard = SetCellState(playerBitboard , hitPosition);
+					text.text = "SCORE: " + GetCellCount(playerBitboard);
 				}
 			}
 		}
