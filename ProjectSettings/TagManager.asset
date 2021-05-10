@@ -3,7 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Desert
+  - Dirt
+  - Grain
+  - Pasture
+  - Rock
+  - Water
+  - Woods
+  - House
   layers:
   - Default
   - TransparentFX
